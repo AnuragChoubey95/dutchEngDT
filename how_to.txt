@@ -1,0 +1,25 @@
+#Title: LAB3
+#Author: ac2255
+#Instructor: Jansen Orfan
+
+LAB 3 | CSCI-630 | INSTRUCTIONS
+
+> Keep all dependencies as well as the following scripts in a single directory
+
+> First you will have to run the train.py, and only then will predict.py be usable.
+
+> Run train.py as : "python3 train.py example_file write_out_file train_method"
+    where,
+        train.py == script
+        example_file == file with labelled examples
+        write_out_file == file to write the serialized object to
+        train_method == either dt or ada
+
+> Run predict.py as "python3 predict.py model_file test_file"
+    where, 
+        predict.py = script
+        model_file = file wth serialized object
+        test_file = file with unlabelled testing data
+
+
+The output of the predict program will be visible on the stdout of your system.

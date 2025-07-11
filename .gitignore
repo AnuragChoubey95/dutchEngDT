@@ -1,0 +1,7 @@
+*.model
+*.out
+*pycache*
+pycache/
+*.model
+*.out
+*pycache*/

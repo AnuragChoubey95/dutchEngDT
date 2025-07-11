@@ -1,0 +1,50 @@
+#Title: LAB3
+#Author: ac2255
+#Instructor: Jansen Orfan
+
+ON FEATURE SELECTION, TRAINING METHOD and MISCELLANEOUS
+
+> FEATURE SELECTION:
+
+    1. Feature 1 takes a list of Dutch function words, and checks whether
+        each sentence has AT LEAST two of the words from that list. The list
+        can be found in dt_utils.py with name FUNC_DUTCH_1.
+    
+    3. Feature 3 takes another list of Dutch function words, and checks whether
+        each sentence has AT LEAST two of the words from that list. The list
+        can be found in dt_utils.py with name FUNC_DUTCH_2. The lists used in
+        features 1 and 2 were originally a composite list, which was then split
+        right down in the middle with no other context other than size and simplicity.
+
+    * Features 1 and 3 proved to be fairly strong features and depending on the 
+    training data, almost always dominated the training process by perfectly splitting
+    the data when called.
+
+    2. Feature 2 checks whether there are at least 2 words in the sentence that end with
+        the substring "en". My observation was that on an average there were at least 3 words
+        in each Dutch sentence that ended ith that substring. In training though, the feature
+        underperformed and never acheived perfect splits.
+
+    4. Feature 4 takes a list of English function words, and checks whether
+        each sentence has AT LEAST two of the words from that list. The list
+        can be found in dt_utils.py with name FUNC_ENGLISH.
+    
+    5. Feature 5 takes the list of 100 most common used English words online, and checks whether
+        each sentence has AT LEAST two of the words from that list. The list
+        can be found in dt_utils.py with name COMMON_ENGLISH. The rationale was that such high
+        frequency words would bound to be in almost all samples from the English Wikipedia.
+        In our training, it sits at the root of the tree.
+
+
+> TRAINING METHOD
+
+    . For the dt, the ID3 algorithm is used with entropy used to split the data and select features
+        in each recursive call. No maximum depth is defined.
+
+    . For adaboost the classic adaboost algorithm as discussed in Russel Norvig book has been used.
+        In most cases the error becomes zero in the third iteration, and we have only 2 stumps to use.
+
+
+
+
+    
