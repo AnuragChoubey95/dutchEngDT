@@ -114,15 +114,16 @@ def has_all_same( sentence_list ):
 
 
 def get_plurality( sentence_list ):
-    nl_count = 0
-    en_count = 0
-    for each in sentence_list:
-        if each[1] == ENGLISH:
+    EN = ENGLISH
+    NL = DUTCH
+    en_count = nl_count = 0
+    for s in sentence_list:
+        lang = s[1]
+        if lang == EN:
             en_count += 1
-        elif each[1] == DUTCH:
+        elif lang == NL:
             nl_count += 1
-    ans = ENGLISH if en_count > nl_count else DUTCH
-    return ans
+    return EN if en_count > nl_count else NL
 
 
 def test(filename):
