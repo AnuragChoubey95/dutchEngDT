@@ -114,14 +114,17 @@ def has_all_same( sentence_list ):
 
 
 def get_plurality( sentence_list ):
-    nl_count = 0
+    ENGLISH_local = ENGLISH
+    DUTCH_local = DUTCH
     en_count = 0
-    for each in sentence_list:
-        if each[1] == ENGLISH:
+    nl_count = 0
+    for s in sentence_list:
+        lang = s[1]
+        if lang == ENGLISH_local:
             en_count += 1
-        elif each[1] == DUTCH:
+        elif lang == DUTCH_local:
             nl_count += 1
-    ans = ENGLISH if en_count > nl_count else DUTCH
+    ans = ENGLISH_local if en_count > nl_count else DUTCH_local
     return ans
 
 
